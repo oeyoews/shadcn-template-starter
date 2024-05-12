@@ -7,18 +7,9 @@ import { useEffect } from 'react';
 export default function Dashboard() {
   useEffect(() => {
     service({
-      url: '/todos/1',
+      url: '/banner',
       method: 'get',
     }).then((res) => {
-      console.log(res);
-    });
-  }, []);
-
-  useEffect(() => {
-    service({
-      method: 'post',
-      url: '/posts',
-    }).then((res: any) => {
       console.log(res);
     });
   }, []);

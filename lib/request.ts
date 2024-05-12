@@ -7,9 +7,13 @@ axios.defaults.headers['Content-Language'] = 'zh_CN'
 // 创建axios实例
 const service = axios.create({
 	// axios中请求配置有baseURL选项，表示请求URL公共部分
-	baseURL: "https://jsonplaceholder.typicode.com",
+	// baseURL: "https://jsonplaceholder.typicode.com",
+	baseURL: "https://react-music-api-coral.vercel.app/api",
 	// 超时
-	timeout: 3000
+	timeout: 3000,
+	// withCredentials: true,
+	// httpsAgent: 'https://corsproxy.io',
+	// httpAgent: 'https://corsproxy.io'
 })
 
 // request拦截器
@@ -55,7 +59,7 @@ service.interceptors.response.use(res => {
 	}
 },
 	error => {
-		console.log('err' + error)
+		console.error('err' + error)
 		let { message } = error
 		if (message == "Network Error") {
 			message = "后端接口连接异常"
