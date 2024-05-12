@@ -1,6 +1,28 @@
+'use client';
+
 import { Sidebar } from './components/sidebar';
+import service from '@/lib/request';
+import { useEffect } from 'react';
 
 export default function Dashboard() {
+  useEffect(() => {
+    service({
+      url: '/todos/1',
+      method: 'get',
+    }).then((res) => {
+      console.log(res);
+    });
+  }, []);
+
+  useEffect(() => {
+    service({
+      method: 'post',
+      url: '/posts',
+    }).then((res: any) => {
+      console.log(res);
+    });
+  }, []);
+
   return (
     <div className="grid min-h-screen w-full md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr]">
       <Sidebar />
