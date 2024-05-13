@@ -10,8 +10,7 @@ export default function Playlist({
 }) {
   return (
     <div>
-      <h2>{title}</h2>
-      {/* TODO: add more */}
+      <h2 className="text-lg font-semibold md:text-2xl">{title}</h2>
       <div className="grid grid-cols-3 md:grid-cols-6 gap-6 my-4">
         {data.slice(0, 12).map((playlist) => (
           <div

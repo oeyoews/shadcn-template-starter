@@ -17,7 +17,7 @@ export default function Hitokoto({ number = 6 }: { number?: number }) {
 
   return (
     <div className="my-4">
-      <h2>云村星评</h2>
+      <h2 className="text-lg font-semibold md:text-2xl">云村星评</h2>
       <div className="grid gap-8 grid-cols-1 md:grid-cols-3">
         {startPickData?.blocks[0].creatives // .filter((b) => b.creatives?.length > 0)[0]
           ?.slice(0, number)
