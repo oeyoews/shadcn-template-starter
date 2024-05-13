@@ -187,14 +187,13 @@ export default function Dashboard() {
         </header>
 
         <main className="flex flex-col gap-4 p-4 lg:gap-6 lg:p-6 fixed bottom-0 top-14 overflow-y-auto">
-          <h1 className="text-lg font-semibold md:text-2xl">今日推荐</h1>
           <div
             className="flex flex-1 rounded-lg border border-dashed shadow-sm"
             x-chunk="dashboard-02-chunk-1">
             <Banners data={banners} />
           </div>
           <div
-            className="flex flex-1 rounded-lg border border-dashed shadow-sm"
+            className="flex flex-1 rounded-lg border border-dashed shadow-sm p-4"
             x-chunk="dashboard-02-chunk-1">
             <Playlist data={hotPlayList} title="热门歌单" />
           </div>
