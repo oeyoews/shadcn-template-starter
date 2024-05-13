@@ -1,20 +1,16 @@
-import axios from 'axios'
+import axios, { AxiosRequestConfig } from 'axios'
 import { toast } from 'sonner'
 
-axios.defaults.headers['Content-Type'] = 'application/json;charset=utf-8'
-// 对应国际化资源文件后缀
-axios.defaults.headers['Content-Language'] = 'zh_CN'
-// 创建axios实例
-const service = axios.create({
-	// axios中请求配置有baseURL选项，表示请求URL公共部分
+const axiosDefaultConfig: AxiosRequestConfig = {
 	// baseURL: "https://jsonplaceholder.typicode.com",
-	baseURL: "https://react-music-api-coral.vercel.app/api",
-	// 超时
+	baseURL: "http://localhost:3001",
 	timeout: 3000,
-	// withCredentials: true,
-	// httpsAgent: 'https://corsproxy.io',
-	// httpAgent: 'https://corsproxy.io'
-})
+	withCredentials: true,
+	// proxy: false,
+}
+
+// 创建axios实例
+const service = axios.create(axiosDefaultConfig)
 
 // request拦截器
 service.interceptors.request.use(config => {
