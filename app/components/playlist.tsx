@@ -29,14 +29,14 @@ export default function Playlist({
                     priority={true}
                     className="rounded-md hover:scale-125 transition-all duration-500"
                   />
-                  <div className="rounded-tl-md flex items-center justify-end absolute bottom-0 right-0 group-hover:invisible backdrop-blur-md px-1 transition-all">
+                  <div className="rounded-tl-md md:flex items-center justify-end absolute bottom-0 right-0 group-hover:invisible backdrop-blur-md px-1 transition-all">
                     {playlist.playCount > 10000
                       ? `${(playlist.playCount / 10000).toFixed(1)}万`
                       : playlist.playCount}
                   </div>
                 </div>
               </div>
-              <div className="text-sm mt-2 hover:text-rose-500 transition-all">
+              <div className="hidden md:block text-sm mt-2 hover:text-rose-500 transition-all">
                 {playlist.name}
               </div>
             </Link>
