@@ -8,6 +8,7 @@ import Banners from '@/app/components/banner';
 import { toast } from 'sonner';
 import { getHotPlayList } from './api/song';
 import Playlist from './components/playlist';
+// import Hitokoto from './components/hitokoto';
 
 export default function Dashboard() {
   const [banners, setBanners] = useState<Banner[]>([]);
@@ -17,7 +18,7 @@ export default function Dashboard() {
     getHotPlayList().then(({ playlists }) => {
       setHotPlayList(playlists);
     });
-  });
+  }, []);
 
   useEffect(() => {
     /** 获取轮播图 */
@@ -52,10 +53,8 @@ export default function Dashboard() {
           </div>
 
           <Banners data={banners} />
-          <Playlist data={hotPlayList} title="今日推荐" />
-          {/* <div
-            className="flex flex-1 items-center justify-center rounded-lg border border-dashed shadow-sm"
-            x-chunk="dashboard-02-chunk-1"></div> */}
+          <Playlist data={hotPlayList} title="" />
+          {/* <Hitokoto /> */}
         </main>
       </div>
     </div>
