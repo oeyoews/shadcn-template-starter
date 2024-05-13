@@ -8,7 +8,7 @@ import Banners from '@/app/components/banner';
 import { toast } from 'sonner';
 import { getHotPlayList } from './api/song';
 import Playlist from './components/playlist';
-// import Hitokoto from './components/hitokoto';
+import Hitokoto from './components/hitokoto';
 
 export default function Dashboard() {
   const [banners, setBanners] = useState<Banner[]>([]);
@@ -54,7 +54,7 @@ export default function Dashboard() {
 
           <Banners data={banners} />
           <Playlist data={hotPlayList} title="" />
-          {/* <Hitokoto /> */}
+          <Hitokoto />
         </main>
       </div>
     </div>
