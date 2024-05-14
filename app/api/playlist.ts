@@ -45,7 +45,7 @@ export const getPlayListDetail = async (
 	return await request({
 		url: '/playlist/detail',
 		params: { id }
-	});
+	})
 };
 
 export const getPlayListComment = async (id: Id): Promise<ISongComment> => {

@@ -46,11 +46,13 @@ import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 export default function Dashboard() {
   const [banners, setBanners] = useState<Banner[]>([]);
   const [hotPlayList, setHotPlayList] = useState<Playlist[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     getHotPlayList().then(({ playlists }) => {
       setHotPlayList(playlists);
     });
+    setIsLoading(false);
   }, []);
 
   useEffect(() => {
@@ -75,6 +77,10 @@ export default function Dashboard() {
         console.error(e);
       });
   }, []);
+
+  if (isLoading) {
+    return <>Loading</>;
+  }
 
   return (
     <div className="grid min-h-screen w-full md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr]">
