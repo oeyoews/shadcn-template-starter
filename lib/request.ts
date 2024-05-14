@@ -3,7 +3,8 @@ import { toast } from 'sonner'
 
 const axiosDefaultConfig: AxiosRequestConfig = {
 	// baseURL: "https://jsonplaceholder.typicode.com",
-	baseURL: "http://localhost:3001",
+	// baseURL: "http://localhost:3001",
+	baseURL: process.env.NEXT_PUBLIC_BASEURL,
 	timeout: 3000,
 	withCredentials: true,
 	// proxy: false,
