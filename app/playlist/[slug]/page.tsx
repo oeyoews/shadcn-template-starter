@@ -34,19 +34,19 @@ export default function Page({ params }: any) {
       <div className="flex justify-center items-center">
         <Image
           src={musicdata?.coverImgUrl!}
-          width={256}
-          height={256}
+          width={128}
+          height={128}
           alt="img"
-          className="rounded-full shadow-lg"
+          className="rounded-full shadow-lg my-4"
         />
       </div>
       <p className="line-clamp-2">{musicdata.description}</p>
-      <div className="my-2 flex items-center space-x-2">
+      <div className="my-4 flex items-center space-x-2 text-sm">
         <div>创建时间: {getTime(musicdata.createTime)}</div>
         <div>更新时间: {getTime(musicdata.updateTime)}</div>
       </div>
       <hr />
-      <ol className="columns-1 md:columns-2">
+      <ol className="columns-1 md:columns-2 my-4">
         {musicdata?.tracks?.map(({ id, name }) => (
           <li key={id} className="mt-0">
             <Link href={`/song?id=${id}`} className="no-underline">
